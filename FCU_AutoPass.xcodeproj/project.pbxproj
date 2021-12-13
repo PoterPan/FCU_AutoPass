@@ -14,6 +14,7 @@
 		E70072532763C0C800044940 /* FCU_AutoPassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70072522763C0C800044940 /* FCU_AutoPassTests.swift */; };
 		E700725D2763C0C800044940 /* FCU_AutoPassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700725C2763C0C800044940 /* FCU_AutoPassUITests.swift */; };
 		E700725F2763C0C800044940 /* FCU_AutoPassUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700725E2763C0C800044940 /* FCU_AutoPassUITestsLaunchTests.swift */; };
+		E75D22E727671574004C4362 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D22E627671574004C4362 /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E70072582763C0C800044940 /* FCU_AutoPassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FCU_AutoPassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E700725C2763C0C800044940 /* FCU_AutoPassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCU_AutoPassUITests.swift; sourceTree = "<group>"; };
 		E700725E2763C0C800044940 /* FCU_AutoPassUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCU_AutoPassUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E75D22E627671574004C4362 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				E70072412763C0C600044940 /* FCU_AutoPassApp.swift */,
 				E70072432763C0C600044940 /* ContentView.swift */,
+				E75D22E627671574004C4362 /* Setting.swift */,
 				E70072452763C0C800044940 /* Assets.xcassets */,
 				E70072472763C0C800044940 /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				E70072442763C0C600044940 /* ContentView.swift in Sources */,
 				E70072422763C0C600044940 /* FCU_AutoPassApp.swift in Sources */,
+				E75D22E727671574004C4362 /* Setting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
