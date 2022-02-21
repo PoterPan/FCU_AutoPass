@@ -135,6 +135,8 @@ struct PassView : View {
     @Binding var Name : String
     @Binding var setting: Setting
     var colorSet = ColorSet()
+    @State private var pulsate: Bool = false
+
 
 
     var body: some View{
@@ -151,6 +153,16 @@ struct PassView : View {
                     HStack {
                         Spacer()
                         ZStack{
+                            Circle()
+                                .frame(width: 240, height: 240)
+                                .foregroundColor(Color.white)
+                                .shadow(color: .yellow, radius: 20, x: 0, y: 0)
+                                .scaleEffect(self.pulsate ? 0.8 : 1.0)
+                                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true).speed(0.7), value: pulsate)
+                                .onAppear() {
+                                    self.pulsate.toggle()
+                                }
+//                                .animation(.easeOut(duration: 10), value: shadow)
                             Circle()
                                 .frame(width: 240, height: 240)
                                 .foregroundColor(Color(red: StringToFloat(str: getColorSet()[0])/255, green: StringToFloat(str: getColorSet()[1])/255, blue: StringToFloat(str: getColorSet()[2])/255, opacity: 1.0))
@@ -182,7 +194,7 @@ struct PassView : View {
                     }
                     HStack {
 //                       ForTest
-//                        Text(getColorSet()[0])
+//                        Text(weekdayValue)
 //                        Text("Color_R: \(StringToFloat(str: getColorSet()[0]))")
                         Spacer()
                         Button(action: {
@@ -234,6 +246,7 @@ struct PassView : View {
         .background(
             Color.primary.opacity(0.25)
         )
+        
     }
     
     func todayText() -> some View {
@@ -265,6 +278,37 @@ struct PassView : View {
             colorSet.today_color_g = setting.color_g1
             colorSet.today_color_b = setting.color_b1
         }
+        else if ( weekday[1] == weekdayValue) {
+            colorSet.today_color_r = setting.color_r2
+            colorSet.today_color_g = setting.color_g2
+            colorSet.today_color_b = setting.color_b2
+        }
+        else if ( weekday[2] == weekdayValue) {
+            colorSet.today_color_r = setting.color_r3
+            colorSet.today_color_g = setting.color_g3
+            colorSet.today_color_b = setting.color_b3
+        }
+        else if ( weekday[3] == weekdayValue) {
+            colorSet.today_color_r = setting.color_r4
+            colorSet.today_color_g = setting.color_g4
+            colorSet.today_color_b = setting.color_b4
+        }
+        else if ( weekday[4] == weekdayValue) {
+            colorSet.today_color_r = setting.color_r5
+            colorSet.today_color_g = setting.color_g5
+            colorSet.today_color_b = setting.color_b5
+        }
+        else if ( weekday[5] == weekdayValue) {
+            colorSet.today_color_r = setting.color_r6
+            colorSet.today_color_g = setting.color_g6
+            colorSet.today_color_b = setting.color_b6
+        }
+        else if ( weekday[6] == weekdayValue) {
+            colorSet.today_color_r = setting.color_r7
+            colorSet.today_color_g = setting.color_g7
+            colorSet.today_color_b = setting.color_b7
+        }
+
         
 
         let ColorSet = [colorSet.today_color_r, colorSet.today_color_g, colorSet.today_color_b]
@@ -292,9 +336,9 @@ struct PassView : View {
             return cgFloat
     }
      
-
-    
 }
+
+
 
 struct SettingView: View {
     @Binding var setting: Setting
