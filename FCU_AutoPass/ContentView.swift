@@ -71,13 +71,7 @@ struct Home: View{
             if show_pass {
                 PassView(show: $show_pass, Name: $Name, setting: $setting)
             }
-            //                NavigationLink(destination: SettingView(),isActive: $show_setting, setting: $setting) {
-            //                    EmptyView()
-            //                }
         }
-        //            .navigationBarTitle("PASS")
-        //            .navigationBarHidden(true)
-        
     }
     
     func alertView(){
@@ -246,6 +240,9 @@ struct PassView : View {
         .background(
             Color.primary.opacity(0.25)
         )
+        .onAppear{
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
         
     }
     
